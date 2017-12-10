@@ -1,10 +1,10 @@
 var config = {
-    apiKey: "AIzaSyC527f6DeGuGAQxi5uEK48GrHYaPtyFleI",
-    authDomain: "thehappyyetiproject.firebaseapp.com",
-    databaseURL: "https://thehappyyetiproject.firebaseio.com",
-    projectId: "thehappyyetiproject",
-    storageBucket: "thehappyyetiproject.appspot.com",
-    messagingSenderId: "1019112304139"
+    apiKey: "AIzaSyAD9RYrseSXfL_TaN2W_AicL3i2eoaM4aU",
+    authDomain: "folsom-train.firebaseapp.com",
+    databaseURL: "https://folsom-train.firebaseio.com",
+    projectId: "folsom-train",
+    storageBucket: "",
+    messagingSenderId: "1066725063678"
   };
 
   firebase.initializeApp(config);
@@ -12,7 +12,7 @@ var config = {
   var database = firebase.database();
 
   
-}
+
 	var trainName = "";
 	var trainDestination = "";
 	var trainTime = 0;
@@ -32,14 +32,11 @@ var config = {
 		destination: destination,
 		time: time,
 		frequency: frequency
-	}
 
-        
-        
-    })
+   
 
-});
-  
+}); 
+
   database.ref().on("value", function(snapshot){
   	console.log(snapshot.val());
   	console.log(snapshot.val().name);
@@ -51,4 +48,9 @@ var config = {
   	$("#thedestination").text(snapshot.val().destination);
   	$("#thefrequency").text(snapshot.val().frequency);
   	$("#thenextarrival").text(snapshot.val().time);
-  }
+
+  }, function(errorObject) {
+  	console.log("Errors handled: " + errorObject.code)
+  });
+});
+}
