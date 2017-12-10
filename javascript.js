@@ -39,6 +39,7 @@ var config = {
     })
 
 });
+  
   database.ref().on("value", function(snapshot){
   	console.log(snapshot.val());
   	console.log(snapshot.val().name);
@@ -46,5 +47,8 @@ var config = {
   	console.log(snapshot.val().time);
   	console.log(snapshot.val().frequency);
 
-  	$
+  	$("#thetrainname").text(snapshot.val().name);
+  	$("#thedestination").text(snapshot.val().destination);
+  	$("#thefrequency").text(snapshot.val().frequency);
+  	$("#thenextarrival").text(snapshot.val().time);
   }
