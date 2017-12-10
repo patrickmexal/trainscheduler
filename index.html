@@ -6,6 +6,7 @@
     <title>Employee Schedule</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="Assets/style.css">
+    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
 </head>
 
 <body>
@@ -30,41 +31,41 @@
             <tbody>
                 <tr>
                     <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Bojo</td>
-                    <td>Oprah</td>
+                    <td id="trainname"></td>
+                    <td id="destination"></td>
+                    <td id="frequency"></td>
+                    <td id="nextarrival"></td>
+                    <td id="minutesaway"></td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
+                    <td>Waylon</td>
+                    <td>Littlefield</td>
+                    <td></td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
+                    <td>Kris</td>
+                    <td>Makawao</td>
+                    <td></td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <th scope="row">4</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
+                    <td>Merle</td>
+                    <td>Checotah</td>
+                    <td></td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <th scope="row">5</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
+                    <td>Johnny</td>
+                    <td>Kingsland</td>
+                    <td></td>
                     <td></td>
                     <td></td>
                 </tr>
@@ -76,29 +77,30 @@
     <div class="container">
     	<h2>Add New Train</h2>
         <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">Train Name</span>
+            <span class="input-group-addon" id="trainnameinput">Train Name</span>
             <input type="text" class="form-control" placeholder="Train Name" aria-describedby="basic-addon1">
         </div>
         <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">Destination</span>
+            <span class="input-group-addon" id="destinationinput">Destination</span>
             <input type="text" class="form-control" placeholder="Destination" aria-describedby="basic-addon1">
         </div>
         <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">First Train Time(Military)</span>
+            <span class="input-group-addon" id="firsttraininput">First Train Time(Military)</span>
             <input type="text" class="form-control" placeholder="First Train Time" aria-describedby="basic-addon1">
         </div>
         <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">Frequency  (In Minutes)</span>
+            <span class="input-group-addon" id="frequencyinput">Frequency  (In Minutes)</span>
             <input type="text" class="form-control" placeholder="Frequency" aria-describedby="basic-addon1">
         </div>
-        <button type="button" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" id="submitbutton" onclick="function">Submit</button>
     </div>
     <br>
     <br>
     <div class="footer">
     	<h4>Copyright 2017 &copy Patrick Mexal</h4>
     </div>
-    <script type="text/javascript" src="Assets/javascript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+    <script type="text/javascript" src="javascript.js"></script>
 </body>
 
 </html>
