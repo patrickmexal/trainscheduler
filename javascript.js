@@ -8,29 +8,43 @@ var config = {
   };
 
   firebase.initializeApp(config);
+
   var database = firebase.database();
 
-  database.ref().on('child_added',function(snapshot){
-	var newName = $('<td>').text(snapshot.val().name);
-    var newRole = $('<td>').text(snapshot.val().role);
-    var newStartDate = $('<td>').text(snapshot.val().date);
-    // var newMonthsWork = $('<td>').text($('#employeename').val());
-    var newMonthsRate = $('<td>').text(snapshot.val().monthsRate);
-    var newBilled = $('<td>').text(snapshot.val().billed);
-    var newRow = $('<tr>').append(newName, newRole, newStartDate, newMonthsRate, newBilled);
-    $('#table-head').append(newRow);
-})
+  
+}
+	var trainName = "";
+	var trainDestination = "";
+	var trainTime = 0;
+	var trainFrequency = 0;
 
   $("#submitbutton").on("click", function() {
+
 	event.preventDefault();
 
-	database.ref().push({
-        name: $("#trainnameinput").val(),
-        destination: $("#destinationinput").val(),
-        first: $("firsttraininput").val(),
-        frequency: $("#frequencyinput").val(),
+	trainName = $("#trainnameinput").val().trim();
+	trainDestination = $("#destinationinput").val().trim();
+	trainTime = $("#firsttraininput").val().trim();
+	trainFrequency = $("frequencyinput").val().trim();
+
+	database.ref().set({
+		name: name,
+		destination: destination,
+		time: time,
+		frequency: frequency
+	}
+
         
         
     })
 
-})
+});
+  database.ref().on("value", function(snapshot){
+  	console.log(snapshot.val());
+  	console.log(snapshot.val().name);
+  	console.log(snapshot.val().destination);
+  	console.log(snapshot.val().time);
+  	console.log(snapshot.val().frequency);
+
+  	$
+  }
