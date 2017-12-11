@@ -53,4 +53,4 @@ var config = {
   	console.log("Errors handled: " + errorObject.code)
   });
 });
-}
+ };
